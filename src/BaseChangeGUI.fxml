@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BaseChangeGUIController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="437.0" minWidth="10.0" prefWidth="182.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="451.0" minWidth="10.0" prefWidth="418.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="176.0" text="Original Number :" textAlignment="RIGHT">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="21.0" prefWidth="173.0" text="Original Base :" textAlignment="RIGHT" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="170.0" text="New Base :" textAlignment="RIGHT" GridPane.rowIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="171.0" text="New Number :" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="originalNumberField" onKeyTyped="#changeBase" prefHeight="26.0" prefWidth="253.0" GridPane.columnIndex="1" />
+      <TextField fx:id="newNumberField" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <ComboBox fx:id="originalBaseBox" prefWidth="150.0" promptText="Select" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <items>
+                  <FXCollections fx:factory="observableArrayList">
+                      <String fx:id="base2" fx:value="2" />
+                      <String fx:id="base8" fx:value="8" />
+                      <String fx:id="base10" fx:value="10" />
+                      <String fx:id="base16" fx:value="16" />
+                      <String fx:id="base32" fx:value="32" />
+                  </FXCollections>
+              </items>
+      </ComboBox>
+      <ComboBox fx:id="newBaseBox" prefWidth="150.0" promptText="Select" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                  <String fx:id="newbase2" fx:value="2" />
+                  <String fx:id="newbase8" fx:value="8" />
+                  <String fx:id="newbase10" fx:value="10" />
+                  <String fx:id="newbase16" fx:value="16" />
+                  <String fx:id="newbase32" fx:value="32" />
+              </FXCollections>
+          </items>
+      </ComboBox>
+      <Button fx:id="swapButton" mnemonicParsing="false" onAction="#swapBase" prefHeight="26.0" prefWidth="129.0" text="Swap" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+   </children>
+</GridPane>
